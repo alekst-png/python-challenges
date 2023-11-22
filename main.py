@@ -26,17 +26,55 @@ def twoDuplicates(nums):
     return nums
 
 
+# number of values above 3 in list
+def three(arr):
+    num = 0
+    for i in range(len(arr)):
+        if arr[i] > 2:
+            num += 1
+
+    return num
+
+
+# reverse words
+def reverseWords(stringSentence):
+    words = stringSentence.split(" ")
+    output = ""
+
+    for i in range(len(words) -1, -1, -1):      # range (start, stop, step - -1 is reverse)
+        if words[i].strip() == "":
+            continue
+        output = output + (words[i]) + " "
+
+    return output
+
+
+# if anagram
+def anagram(s, t):
+    # sort alphabetically
+    sortedS = sorted(s)
+    sortedT = sorted(t)
+    if sortedS == sortedT:
+        return 'true'
+    else:
+        return 'false'
+
+
 class Main(object):
     # merge two arrays and sort
     # array = merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
     # for i in range(6):
     #     print(array[i])
 
-    value = twoDuplicates([1,1,1,2])
-    for i in range(len(value)):
-        print(value[i])
-    print("number of values is " + str(len(value)))
+    # value = twoDuplicates([1,1,1,2])
+    # for i in range(len(value)):
+    #     print(value[i])
+    # print("number of values is " + str(len(value)))
+    #
+    # # prints each value in list
+    # for n in [1,1,1,2]:
+    #     print(n)
 
-    # prints each value in list
-    for n in [1,1,1,2]:
-        print(n)
+    # print(three([3,0,6,1,5]))
+    # print(reverseWords("the big red house"))
+    print(anagram("anagram", "gramana"))
